@@ -8,4 +8,4 @@ Na mesa, cada garfo é representado por um traço, que some ao serem pegos pelos
 
 O arquivo table.h possuí a representação em ASCII do estado inicial da mesa.
 
-[Vídeo explicativo](https://drive.google.com/file/d/1MRtDRmL603DtYQWO5YNwwT6LAqTpJnSW/view?usp=sharing)
+[Vídeo explicativo](https://drive.google.com/file/d/1oCyK9GZ13gsPoHWe8886m_uKlllXj6Dh/view?usp=sharing)
