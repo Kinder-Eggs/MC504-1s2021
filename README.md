@@ -16,3 +16,9 @@
     
     Fonte de insipiracao para temas [The Little Book of Semaphores](https://greenteapress.com/wp/semaphores/)
     
+    
+- ## Projeto 3: Animação multithread com locks ou variáveis de condição
+    
+    Tema Livre
+    
+    Implementação de uma aplicação multithread que utiliza locks ou variáveis de condição junto a um visualizador para o progresso da aplicaçã
