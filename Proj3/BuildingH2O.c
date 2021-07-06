@@ -60,7 +60,7 @@ void* oxygenThread(void* v) {
         sem_post(&oxyQueue);
         oxygen--;
     } else
-        sem_post(&mutex);  // Else releases mutex lock
+        sem_post(&mutex);  // Else releases mutex lock to wait for more hydrogens
     
     sem_wait(&oxyQueue);
     bond();
@@ -73,17 +73,17 @@ void* oxygenThread(void* v) {
 
 
 void* hydrogenThread(void* v) {
-    sem_wait(&mutex);
+    sem_wait(&mutex);  // Grabs the mutex lock
     hydrogen++;
     print();
-    if(hydrogen >= 2 && oxygen >= 1) {
+    if(hydrogen >= 2 && oxygen >= 1) {  // If there is enough to make water
         sem_post(&hydroQueue);
         sem_post(&hydroQueue);
         hydrogen -= 2;
         sem_post(&oxyQueue);
         oxygen -= 1;
     } else
-        sem_post(&mutex);
+        sem_post(&mutex);  // Else releases mutex lock to wait for more hydrogens/oxygens
 
     sem_wait(&hydroQueue);
     
@@ -93,7 +93,7 @@ void* hydrogenThread(void* v) {
     return NULL;
 }
 
-
+// Prints current state
 void print() {
     system("clear");
     if(oxygen > 0)
@@ -109,7 +109,7 @@ void print() {
     usleep(500000);
 }
 
-
+// Water molecule leaving animation
 void bond() {
     system("clear");
     printf("                     ___\nOxygens: %d   |      /   \\\n             |      | O |\n             |      \\___/\n             |       / \\", oxygen);
