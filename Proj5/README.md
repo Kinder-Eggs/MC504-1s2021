@@ -11,7 +11,8 @@ Para garantir seu funcionamento tiveram de ser alterado alguns arquivos presente
 * kernel/Makefile - Alterado configuração para a compilação da nova chamada de sistema
 * include/linux/syscalls.h - Extendido a header das chamadas de sistema para incluir as duas novas chamadas de sistema
 
-Além disso também foi criado um novo arquivo contendo as chamadas de sistema:
+Além disso também foi criado um novo arquivo contendo as chamadas de sistema e um arquivo para testes:
 * kernel/getsetuserweight.c - Arquivo .c contendo as duas chamadas de sistema
+* testes/teste.c - Arquivo que utiliza as novas chamadas de sistema para mostrar seu funcionamento
 
 [Vídeo explicativo]()
